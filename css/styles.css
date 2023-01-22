@@ -27,6 +27,9 @@
   --bgcolor: #fff; /* main */
   --bgcolor-dark: #2f303a; /* 4: banner & footer */
   --bgcolor-fade: #f5f4fa; /* 4 "our team" section */
+  /* --bgcolor-smedia-hover: #2196f3;
+  --bgcolor-smedia-footer-hover: #2196f3; */
+  --bgcolor-smedia-footer: rgba(255, 255, 255, 0.1);
 
   /* BUTTONS BACKGROUND */
   --bgcolor-button-banner: #2196f3;
@@ -48,6 +51,8 @@
   --shadow-button: 0px 4px 4px 0px #00000026;
   --shadow-button-menu-hover: 0px 2px 2px 0px #0000001f,
     0px 1px 2px 0px #00000014, 0px 3px 1px 0px #0000001a;
+    --shadow-portfolio-card-item-hover: 1px 4px 6px 0px #00000029,
+    0px 4px 4px 0px #0000000f, 0px 1px 1px 0px #0000001f;
 }
 
 /* general classes & settings*/
@@ -95,6 +100,10 @@ ul {
 .link__header:focus-visible {
   color: var(--font-color-hover);
 }
+.contact__link:hover > .contact__svg,
+.contact__link:focus > .contact__svg {
+  --color4: var(--font-color-hover);
+}
 /* clients */
 .client__link:hover,
 .client__link:focus {
@@ -107,9 +116,14 @@ ul {
   --color5: var(--font-color-white);
   background-color: var(--font-color-hover);
 }
-.footer .social__logo:hover {
-  background-color: var(--bgcolor-social-footer-hover);
+.footer .social__logo {
+  background-color: var(--bgcolor-smedia-footer);
 }
+/* cards */
+.card__item:hover {
+  box-shadow: var(--shadow-portfolio-card-item-hover);
+}
+
 
 /* general body settings */
 body {
@@ -351,7 +365,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 16px 32px 30px 32px;
+  margin-bottom: 30px;
+  margin-top:16px;
+  /* margin: 16px 32px 30px 32px; */
 }
 .smedia__logo {
   display: flex;
@@ -387,7 +403,8 @@ body {
 }
 .footer__arrange {
   display: flex;
-  flex-flow: column;
+  /* flex-flow: column; */
+  align-items: baseline;
 }
 .footer.section {
   padding: 60px 0;
@@ -414,6 +431,30 @@ body {
 }
 .address__street {
   color: var(--font-color-white);
+}
+.footer__item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 70px;
+}
+.footer__item:nth-child(2) {
+  margin-right: 78px;
+}
+.footer__title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: var(--font-color-white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+}
+.footer .smedia__logo {
+  background-color: var(--bgcolor-smedia-footer);
+  --color5: var(--font-color-white);
+}
+.footer .smedia__logo:hover {
+  background-color: var(--font-color-hover);
 }
 
 /* PORTFOLIO STYLES */
